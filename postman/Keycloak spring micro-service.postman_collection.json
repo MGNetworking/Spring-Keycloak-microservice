@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "ab1f91df-cb59-4cd2-a4c6-f2606ec2126a",
+		"name": "Keycloak spring micro-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Keycloak token d'acces",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user_maxime",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "GkKwJrXz0301F6Iha9d3",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "products-app",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/realms/ecom-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"realms",
+						"ecom-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/suppliers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJDVlhTeFcwZW15NlAzdWxIOVFkVHhWbWJpY0w3WlhydktUNFRLWE5GampJIn0.eyJleHAiOjE2MjAyNDcxMDEsImlhdCI6MTYyMDI0NjgwMSwianRpIjoiYjcxMmFmYmEtZTRlYi00ZTRkLWE2MDctM2IyYWYyMzdjZmJiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL2Vjb20tcmVhbG0iLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMmRmMTIzODMtNjYzZS00YzMyLWI3NGUtMjE1MzAzMjlmY2QxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoicHJvZHVjdHMtYXBwIiwic2Vzc2lvbl9zdGF0ZSI6ImI0MGI0YmY2LWNlN2QtNDg2My1iZDAxLTJiZWMzN2Y4Y2RkYSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgxIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJhcHAtbWFuYWdlciIsIm9mZmxpbmVfYWNjZXNzIiwiTUFOQUdFUiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoibWF4aW1lIGdoYWxlbSIsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXJfbWF4aW1lIiwiZ2l2ZW5fbmFtZSI6Im1heGltZSIsImZhbWlseV9uYW1lIjoiZ2hhbGVtIiwiZW1haWwiOiJnaGFsZW0ubWF4aW1lQGdtYWlsLmNvbSJ9.p2Ag8H8Wzal7nmMcjH_bHzBx7bmXgSOKR43t16EZsC_eYqi5-8Luc_zjJCtHInCET6idp3PM2OTHp8vY_P0tU3uFJRzYEhBXcOyR8_-0ll6YGHrVU9CRUbns2BY4shE2UcVKLb3p6HY7Gnr-JiPGA8rZjNpENcZMLnPCIMuN0_i6CAEIY1-rHQcSeQaXX42ifATv3lrsRcMlHHaoQcRO7yh_TbAhvMtcC8igOw-bS3LjeJpi3R65pLWf42vKQsOYQa3DX6iB75MVTiQ0mJ3hCxzsRjL9_qqHP9Zpo89c-Pa1kslwox-OMz6qitqs4LHdtm7N3V8UkFeAbsXGZmmajw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8083/suppliers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"suppliers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
